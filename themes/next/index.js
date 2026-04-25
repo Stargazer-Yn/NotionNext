@@ -24,6 +24,7 @@ import StickyBar from './components/StickyBar'
 import TagItem from './components/TagItem'
 import TocDrawer from './components/TocDrawer'
 import TocDrawerButton from './components/TocDrawerButton'
+import DesktopTopNav from './components/DesktopTopNav'
 import TopNav from './components/TopNav'
 import CONFIG from './config'
 import { Style } from './style'
@@ -102,12 +103,13 @@ const LayoutBase = props => {
         {/* 移动端顶部导航栏 */}
         <TopNav {...props} />
 
+        {/* 桌面端顶部导航栏 */}
+        <DesktopTopNav {...props} />
+
         <AlgoliaSearchModal cRef={searchModal} {...props} />
 
         <>{headerSlot}</>
 
-        {/* 顶部黑线装饰 */}
-        <div className='h-0.5 w-full bg-gray-700 dark:bg-gray-600 hidden lg:block' />
 
         {/* 主区 */}
         <main
