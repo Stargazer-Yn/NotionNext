@@ -30,7 +30,7 @@ const BlogPostCard = ({ post, index, showSummary }) => {
       <div
         key={post.id}
         className='flex flex-col-reverse justify-between duration-300'>
-        <div className='lg:p-8 p-4 flex flex-col w-full'>
+        <div className='lg:p-5 p-3 flex flex-col w-full'>
           {/* 文章标题 */}
           <SmartLink
             {...aosProps}
@@ -82,7 +82,7 @@ const BlogPostCard = ({ post, index, showSummary }) => {
           {(!showPreview || showSummary) && !post.results && (
             <p
               {...aosProps}
-              className='mt-4 mb-12 text-gray-700 dark:text-gray-300 text-sm font-light leading-7'>
+              className='mt-2 mb-3 text-gray-700 dark:text-gray-300 text-sm font-light leading-7'>
               {post.summary}
             </p>
           )}
@@ -102,10 +102,10 @@ const BlogPostCard = ({ post, index, showSummary }) => {
             </div>
           )}
 
-          <div className='text-right border-t pt-8 border-dashed'>
+          <div className='text-right border-t pt-3 border-dashed'>
             <SmartLink
               href={post?.href}
-              className='hover:bg-opacity-100 hover:underline transform duration-300 p-3 text-white bg-gray-800 cursor-pointer'>
+              className='hover:bg-opacity-100 hover:underline transform duration-300 px-3 py-1.5 text-sm text-white bg-gray-800 cursor-pointer'>
               {locale.COMMON.ARTICLE_DETAIL}
               <i className='ml-1 fas fa-angle-right' />
             </SmartLink>

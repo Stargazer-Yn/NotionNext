@@ -25,7 +25,7 @@ const BlogPostListPage = ({ page = 1, posts = [], postCount }) => {
         {/* 文章列表 */}
         <div
           id='posts-wrapper'
-          className='flex flex-wrap lg:space-y-4 space-y-1'>
+          className='flex flex-wrap lg:space-y-2 space-y-1'>
           {posts?.map((post, index) => (
             <BlogPostCard key={post.id} index={index} post={post} />
           ))}
