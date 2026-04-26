@@ -32,9 +32,8 @@ const SideAreaLeft = props => {
       }>
       <section className='w-60'>
         {/* 菜单 */}
-        <section className='shadow hidden lg:block mb-5 pb-4 bg-white dark:bg-hexo-black-gray hover:shadow-xl duration-200'>
-          <Logo className='min-h-32 ' {...props} />
-          <div className='pt-2 px-2 '>
+        <section className='shadow hidden lg:block mb-5 py-3 bg-white dark:bg-hexo-black-gray hover:shadow-xl duration-200'>
+          <div className='pt-1 px-2 '>
             <MenuList allowCollapse={true} {...props} />
           </div>
           {siteConfig('NEXT_MENU_SEARCH', null, CONFIG) && (

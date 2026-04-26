@@ -11,6 +11,7 @@ const Style = () => {
       body {
         background-color: #ffffff;
         background-image: none;
+        padding-top: 48px;
       }
       .dark body {
         background-color: #111;

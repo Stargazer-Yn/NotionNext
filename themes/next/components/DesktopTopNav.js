@@ -54,7 +54,7 @@ const DesktopTopNav = props => {
   }
 
   return (
-    <nav className='flex sticky top-0 z-40 w-full bg-gray-900 text-white items-center px-6 h-12 shadow-md'>
+    <nav className='flex fixed top-0 left-0 right-0 z-50 w-full bg-gray-900 text-white items-center px-6 h-12 shadow-md'>
       <SmartLink
         href='/'
         className='font-serif text-base font-semibold text-white hover:text-gray-300 transition-colors mr-8 whitespace-nowrap'>
