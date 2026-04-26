@@ -1,5 +1,4 @@
 import NotionIcon from '@/components/NotionIcon'
-import NotionPage from '@/components/NotionPage'
 import TwikooCommentCount from '@/components/TwikooCommentCount'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
@@ -11,8 +10,6 @@ import TagItemMini from './TagItemMini'
 
 const BlogPostCard = ({ post, index, showSummary }) => {
   const { locale } = useGlobal()
-  const showPreview =
-    siteConfig('NEXT_POST_LIST_PREVIEW', null, CONFIG) && post.blockMap
   // 动画样式  首屏卡片不用，后面翻出来的加动画
   const aosProps =
     index > 2
@@ -35,7 +32,7 @@ const BlogPostCard = ({ post, index, showSummary }) => {
             {...aosProps}
             href={post?.href}
             passHref
-            className={`cursor-pointer text-3xl ${showPreview ? 'text-center' : ''} leading-tight text-gray-700 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400`}>
+            className='cursor-pointer text-3xl leading-tight text-gray-700 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400'>
             {siteConfig('POST_TITLE_ICON') && (
               <NotionIcon icon={post.pageIcon} />
             )}{' '}
@@ -44,7 +41,7 @@ const BlogPostCard = ({ post, index, showSummary }) => {
 
           <div
             {...aosProps}
-            className={`flex mt-2 items-center ${showPreview ? 'justify-center' : 'justify-start'} flex-wrap dark:text-gray-500 text-gray-500 `}>
+            className='flex mt-2 items-center justify-start flex-wrap dark:text-gray-500 text-gray-500'>
             <div>
               {post.category && (
                 <>
@@ -78,7 +75,7 @@ const BlogPostCard = ({ post, index, showSummary }) => {
             </div>
           </div>
 
-          {(!showPreview || showSummary) && !post.results && (
+          {!post.results && (
             <p
               {...aosProps}
               className='mt-2 mb-3 text-gray-700 dark:text-gray-300 text-sm font-light leading-7'>
@@ -93,12 +90,6 @@ const BlogPostCard = ({ post, index, showSummary }) => {
                 <span key={index}>{r}</span>
               ))}
             </p>
-          )}
-
-          {showPreview && post?.blockMap && (
-            <div className='overflow-ellipsis truncate'>
-              <NotionPage post={post} />
-            </div>
           )}
 
           <div className='text-right border-t pt-3 border-dashed'>
