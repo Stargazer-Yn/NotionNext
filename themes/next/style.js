@@ -7,15 +7,17 @@
 const Style = () => {
   return (
     <style jsx global>{`
-      // 底色
+      /* 底色 */
       body {
         background-color: #ffffff;
+        background-image: none;
       }
       .dark body {
-        background-color: black;
+        background-color: #111;
+        background-image: none;
       }
 
-      // 菜单下划线动画
+      /* 菜单下划线动画 */
       #theme-next .menu-link {
         text-decoration: none;
         background-image: linear-gradient(#4e80ee, #4e80ee);

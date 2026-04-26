@@ -8,7 +8,8 @@ import DarkModeButton from './DarkModeButton'
 const DesktopTopNav = props => {
   const { customNav, customMenu, postCount } = props
   const { locale } = useGlobal()
-  const { searchModal } = useNextGlobal()
+  const nextGlobal = useNextGlobal()
+  const searchModal = nextGlobal?.searchModal
 
   const archiveSlot = (
     <span className='ml-1 bg-gray-600 rounded text-gray-100 px-1 text-xs'>
@@ -53,7 +54,7 @@ const DesktopTopNav = props => {
   }
 
   return (
-    <nav className='hidden lg:flex sticky top-0 z-40 w-full bg-gray-900 dark:bg-gray-950 text-white items-center px-6 h-12 shadow-md'>
+    <nav className='flex sticky top-0 z-40 w-full bg-gray-900 text-white items-center px-6 h-12 shadow-md'>
       <SmartLink
         href='/'
         className='font-serif text-base font-semibold text-white hover:text-gray-300 transition-colors mr-8 whitespace-nowrap'>

@@ -100,8 +100,7 @@ const LayoutBase = props => {
         className={`${siteConfig('FONT_STYLE')} dark:bg-black scroll-smooth`}>
         <Style />
 
-        {/* 移动端顶部导航栏 */}
-        <TopNav {...props} />
+        {/* 移动端汉堡菜单已由 DesktopTopNav 全屏顶部导航替代 */}
 
         {/* 桌面端顶部导航栏 */}
         <DesktopTopNav {...props} />
