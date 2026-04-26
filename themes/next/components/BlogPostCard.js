@@ -4,7 +4,6 @@ import TwikooCommentCount from '@/components/TwikooCommentCount'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { formatDateFmt } from '@/lib/utils/formatDate'
-import Image from 'next/image'
 import SmartLink from '@/components/SmartLink'
 import CONFIG from '../config'
 import Card from './Card'
@@ -112,21 +111,6 @@ const BlogPostCard = ({ post, index, showSummary }) => {
           </div>
         </div>
 
-        {siteConfig('NEXT_POST_LIST_COVER', null, CONFIG) &&
-          post?.pageCoverThumbnail && (
-            <SmartLink href={post?.href} passHref legacyBehavior>
-              <div className='h-72 w-full relative duration-200 cursor-pointer transform overflow-hidden'>
-                <Image
-                  className='hover:scale-105 transform duration-500'
-                  src={post?.pageCoverThumbnail}
-                  alt={post.title}
-                  layout='fill'
-                  objectFit='cover'
-                  loading='lazy'
-                />
-              </div>
-            </SmartLink>
-          )}
       </div>
     </Card>
   )
